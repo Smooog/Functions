@@ -4,12 +4,9 @@ void ft_is_negative(int n) {
     int neg = 78;
     int pos = 80;
     if (n >= 0)
-    {
         write (1, &pos, 1);
-    }
-    else {
+    else 
         write (1, &neg, 1);
-    }
 }
 
 int main() {
