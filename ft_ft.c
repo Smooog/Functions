@@ -27,15 +27,23 @@ void ft_putnbr(int nb) {
             nb = nb%10 * (-1) + 48;
             write (1, &nb, 1);
         }
-        else
-            {
+        else{
                 nb = nb%10 + 48;
                 write (1, &nb, 1);
             }
     }
 }
 
+void ft_ft(int *nbr) {
+    *nbr = -2147483648;
+}
+
 int main(){
-    ft_putnbr(42);
+    int c;
+    int *p;
+
+    p = &c;
+    ft_ft(p);
+    ft_putnbr(c);
     return 0;
 }

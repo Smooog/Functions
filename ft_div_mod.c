@@ -35,7 +35,25 @@ void ft_putnbr(int nb) {
     }
 }
 
-int main(){
-    ft_putnbr(42);
+void ft_div_mod(int a, int b, int *div, int *mod){
+    *div = a/b;
+    *mod = a%b;
+}
+
+int main() {
+    double c = 13;
+    int c1 = 5;
+    int d1;
+    int m1;
+
+    int *d;
+    int *m;
+
+    d = &d1;
+    m = &m1;
+    ft_div_mod(c, c1, d, m);
+    ft_putnbr(d1);
+    write (1, " ", 1);
+    ft_putnbr(m1);
     return 0;
 }

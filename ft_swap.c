@@ -1,6 +1,6 @@
 #include <unistd.h>
 
-void ft_putnbr(int nb) {
+void ft_putnbr(int nb){
     int a;
     int b;
     int i;
@@ -27,15 +27,34 @@ void ft_putnbr(int nb) {
             nb = nb%10 * (-1) + 48;
             write (1, &nb, 1);
         }
-        else
-            {
-                nb = nb%10 + 48;
-                write (1, &nb, 1);
-            }
+        else{
+            nb = nb%10 + 48;
+            write (1, &nb, 1);
+        }
     }
 }
 
+void ft_swap(int *a, int *b){
+    int i;
+    
+    i = *a;
+    *a = *b;
+    *b = i;
+}
+
 int main(){
-    ft_putnbr(42);
+    int c;
+    int c1;
+    int *a1;
+    int *b1;
+    
+    c1 = 13;
+    c = 12;
+    a1 = &c;
+    b1 = &c1;
+    ft_swap(a1, b1);
+    ft_putnbr(c);
+    write (1, " ", 1);
+    ft_putnbr(c1);
     return 0;
 }

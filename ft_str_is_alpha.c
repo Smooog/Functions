@@ -1,4 +1,5 @@
 #include <unistd.h>
+#include <stdlib.h>
 
 void ft_putnbr(int nb) {
     int a;
@@ -27,15 +28,37 @@ void ft_putnbr(int nb) {
             nb = nb%10 * (-1) + 48;
             write (1, &nb, 1);
         }
-        else
-            {
-                nb = nb%10 + 48;
-                write (1, &nb, 1);
-            }
+        else{
+            nb = nb%10 + 48;
+            write (1, &nb, 1);
+        }
     }
 }
 
+int ft_str_is_alpha(char *str){
+    int i;
+    int b;
+
+    i = 0;
+    b = 0;
+    if (str == NULL)
+        return(1);
+
+    while(str[i] != '\0'){
+        if(str[i] < 'A' || str[i] > 'z' )
+            b++;
+        if(str[i] > 'Z' && str[i] < 'a' )
+            b++;
+        i++;
+    }
+
+    if (b > 0)
+        return(0);
+    return (1);
+}
+
 int main(){
-    ft_putnbr(42);
+    char s[2] = "5d";
+    ft_putnbr(ft_str_is_alpha(s));
     return 0;
 }

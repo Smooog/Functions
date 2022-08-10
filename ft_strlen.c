@@ -1,6 +1,6 @@
 #include <unistd.h>
 
-void ft_putnbr(int nb) {
+void ft_putnbr(int nb){
     int a;
     int b;
     int i;
@@ -27,15 +27,25 @@ void ft_putnbr(int nb) {
             nb = nb%10 * (-1) + 48;
             write (1, &nb, 1);
         }
-        else
-            {
-                nb = nb%10 + 48;
-                write (1, &nb, 1);
-            }
+        else{
+            nb = nb%10 + 48;
+            write (1, &nb, 1);
+        }
     }
 }
 
+int ft_strlen(char *str){
+    int i;
+
+    i = 0;
+    while (*str){
+        str++;
+        i++;
+    }
+    return(i);
+}
+
 int main(){
-    ft_putnbr(42);
+    ft_putnbr(ft_strlen("salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un"));
     return 0;
 }
